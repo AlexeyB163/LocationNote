@@ -8,12 +8,11 @@
 import UIKit
 
 protocol ListOfNotesViewInputProtocol: AnyObject {
-    func updateSt(aa: String)
 }
 
 protocol ListOfNotesViewOutputProtocol: AnyObject {
     init(view: ListOfNotesViewInputProtocol)
-    func viewDidLoad(stri: String)
+    func openDetailsNote()
 }
 
 
@@ -25,27 +24,64 @@ class ListOfNotesViewController: UIViewController {
     let tableView = UITableView()
     var rows:[Note] = []
     
-    let a = "test"
-    var b = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
-        presenter.viewDidLoad(stri: a)
+        setupNavigationBar()
+        setupTableView()
+        setupConstraint()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
-
-
-}
-
-// MARK: - Setup TableView
-extension ListOfNotesViewController {
-    
 }
 
 extension ListOfNotesViewController: ListOfNotesViewInputProtocol {
-    func updateSt(aa: String) {
-        b = aa
-        print("VIEW b \(b)")
+    
+}
+
+// MARK: - Setup NavigationBar
+extension ListOfNotesViewController {
+    private func setupNavigationBar() {
+        navigationItem.title = "List notes"
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(addNote))
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    @objc func addNote() {
+        presenter.openDetailsNote()
+    }
+}
+
+
+// MARK: - Setup TableView
+extension ListOfNotesViewController {
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.register(NoteTableViewCell.self, forCellReuseIdentifier: "NoteCell")
+    }
+
+    private func setupConstraint() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
+        
     }
     
     

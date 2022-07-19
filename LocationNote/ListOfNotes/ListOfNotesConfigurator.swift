@@ -14,10 +14,10 @@ class ListOfNotesConfigurator: ListOfNotesConfiguratorInputProtocol {
     func configure(with viewController: ListOfNotesViewController) {
         let presenter = ListOfNotesPresenter(view: viewController)
         let interactor = ListOfNotesInteractor(presenter: presenter)
-           let router = ListOfNotesRouter()
+        let router = ListOfNotesRouter(viewController: viewController)
            
-           viewController.presenter = presenter
-           presenter.interactor = interactor
-           presenter.router = router
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.router = router
     }
 }

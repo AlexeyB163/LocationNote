@@ -9,25 +9,30 @@ import Foundation
 
 protocol NoteDetailsInteractorInputProtocol: AnyObject {
     init(presenter: NoteDetailsInteractorOutputProtocol)
-    
+    func fetchNoteData(text: String)
 }
 
 protocol NoteDetailsInteractorOutputProtocol: AnyObject {
-
+    func notesDidReceive(text: String)
 }
 
 class NoteDetailsInteractor: NoteDetailsInteractorInputProtocol {
     
     
-    var presenter: NoteDetailsInteractorOutputProtocol!
+    weak var presenter: NoteDetailsInteractorOutputProtocol!
     
     
     required init(presenter: NoteDetailsInteractorOutputProtocol) {
         self.presenter = presenter
     }
     
+    func fetchNoteData(text: String) {
+//        print("INTER \(text)")
+//        presenter.notesDidReceive(text: text)
+        
+    }
 }
 
-extension NoteDetailsInteractor: NoteDetailsInteractorOutputProtocol {
-    
-}
+//extension NoteDetailsInteractor: NoteDetailsInteractorOutputProtocol {
+//
+//}

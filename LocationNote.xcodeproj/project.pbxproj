@@ -82,8 +82,8 @@
 			children = (
 				CEE72BA02886952B00615F8F /* Base */,
 				CEE72B9B2885854D00615F8F /* UIComponents */,
-				CEE72B902885852A00615F8F /* NoteDetails */,
 				CEE72B85288584FF00615F8F /* ListOfNotes */,
+				CEE72B902885852A00615F8F /* NoteDetails */,
 				CEE72B822885849C00615F8F /* Model */,
 				CEE72B4F2885828200615F8F /* AppDelegate.swift */,
 				CEE72B512885828200615F8F /* SceneDelegate.swift */,

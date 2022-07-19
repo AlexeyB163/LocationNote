@@ -12,7 +12,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let listVC = ListOfNotesViewController()
-        let detailsVC = NoteDetailsViewController()
         
         let configureItem = UIImage.SymbolConfiguration(weight: .semibold)
         let imageItem = UIImage(systemName: "square.fill", withConfiguration: configureItem)
@@ -21,12 +20,7 @@ class TabBarController: UITabBarController {
             setupNavigationController(
                 rootViewController: listVC,
                 title: "Notes",
-                image: imageItem ?? UIImage()),
-            setupNavigationController(
-                rootViewController: detailsVC,
-                title: "Notes",
                 image: imageItem ?? UIImage())
-        
         ]
         
     }

@@ -7,21 +7,24 @@
 
 import Foundation
 
+
+
 class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
-        
 
     var view: ListOfNotesViewInputProtocol!
     var interactor: ListOfNotesInteractorInputProtocol!
     var router: ListOfNotesRouterInputProtocol!
     
+    var test = "@@@"
+    
+    
+    
     required init(view: ListOfNotesViewInputProtocol) {
         self.view = view
     }
-
     
-    func viewDidLoad(stri: String) {
-        print("---presrnter---- \(stri)")
-        interactor.rrr(str: stri)
+    func openDetailsNote() {
+        router.openDetailsVC(text: test)
     }
     
 }
@@ -30,8 +33,4 @@ class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
 // MARK: - ListOfNotesInteractorOutputProtocol
 extension ListOfNotesPresenter: ListOfNotesInteractorOutputProtocol {
    
-    
-    func updateView(ccc: String) {
-        view.updateSt(aa: ccc)
-    }
 }

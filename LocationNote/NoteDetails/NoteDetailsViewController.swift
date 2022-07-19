@@ -14,7 +14,9 @@ protocol NoteDetailsViewInputProtocol: AnyObject {
 
 protocol NoteDetailsViewOutputProtocol: AnyObject {
     init(view: NoteDetailsViewInputProtocol)
-   
+    func viewDidLoad(text: String)
+   // первый вариант передачи
+    var completion:((String) -> Void)? { get set }
 }
 
 class NoteDetailsViewController: UIViewController {
@@ -24,11 +26,16 @@ class NoteDetailsViewController: UIViewController {
     
     let textView = UITextView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(with: self)
         setupTextView()
         setupConstraits()
+        setupNavigationBar()
+        
+    }
+    deinit {
+        print("deinit")
     }
 }
 
@@ -52,8 +59,19 @@ extension NoteDetailsViewController {
 
 // MARK: - Setup NavigationBar
 extension NoteDetailsViewController {
+    private func setupNavigationBar() {
+        navigationItem.title = "Note"
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissScreen))
+    }
     
+    @objc private func dismissScreen() {
+        presenter.completion?(textView.text)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+
+
 
 
 extension NoteDetailsViewController: NoteDetailsViewInputProtocol {

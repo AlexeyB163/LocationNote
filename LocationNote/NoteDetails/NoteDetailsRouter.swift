@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+
 protocol NoteDetailsRouterInputProtocol {
     //init(viewController: NoteDetailsViewController)
     

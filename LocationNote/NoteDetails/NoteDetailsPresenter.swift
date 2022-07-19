@@ -7,18 +7,37 @@
 
 import Foundation
 
+
 class NoteDetailsPresenter: NoteDetailsViewOutputProtocol {
     
-    var view: NoteDetailsViewInputProtocol!
+    weak var view: NoteDetailsViewInputProtocol!
     var interactor: NoteDetailsInteractorInputProtocol!
     var router: NoteDetailsRouterInputProtocol!
+    
+    var a = ""
+    var completion:((String) -> Void)?
     
     required init(view: NoteDetailsViewInputProtocol) {
         self.view = view
     }
+    
+    func viewDidLoad(text: String) {
+        a = text
+        print(a)
+    }
+    
+    
+    
 }
 
 // MARK: - NoteDetailsInteractorOutputProtocol
 extension NoteDetailsPresenter: NoteDetailsInteractorOutputProtocol {
+    func notesDidReceive(text: String) {
+        print("PRES \(text)")
+    }
     
+
+    
+
 }
+
