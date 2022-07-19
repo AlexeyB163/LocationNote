@@ -9,11 +9,11 @@ import Foundation
 
 protocol NoteDetailsInteractorInputProtocol: AnyObject {
     init(presenter: NoteDetailsInteractorOutputProtocol)
-    func fetchNoteData(text: String)
+    func fetchNote(text: String)
 }
 
 protocol NoteDetailsInteractorOutputProtocol: AnyObject {
-    func notesDidReceive(text: String)
+    func noteDidReceive(note: Note)
 }
 
 class NoteDetailsInteractor: NoteDetailsInteractorInputProtocol {
@@ -26,10 +26,9 @@ class NoteDetailsInteractor: NoteDetailsInteractorInputProtocol {
         self.presenter = presenter
     }
     
-    func fetchNoteData(text: String) {
-//        print("INTER \(text)")
-//        presenter.notesDidReceive(text: text)
-        
+    func fetchNote(text: String) {
+        let note = Note(title: "", description: text)
+        presenter.noteDidReceive(note: note)
     }
 }
 

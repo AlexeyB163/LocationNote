@@ -13,7 +13,7 @@ protocol ListOfNotesViewInputProtocol: AnyObject {
 protocol ListOfNotesViewOutputProtocol: AnyObject {
     init(view: ListOfNotesViewInputProtocol)
     func openDetailsNote()
-    func testData(text: String)
+    func testData(note: Note)
 }
 
 

@@ -19,6 +19,7 @@ protocol NoteDetailsViewOutputProtocol: AnyObject {
     var completion:((String) -> Void)? { get set }
     // второе вариант передачи назад
     func getDataFromDetails(text: String)
+    func getNote(textView: String)
 }
 
 class NoteDetailsViewController: UIViewController {
@@ -72,7 +73,9 @@ extension NoteDetailsViewController {
         //presenter.completion?(textView.text)
         
         // 2 вар
-        presenter.getDataFromDetails(text: textView.text)
+        //presenter.getDataFromDetails(text: textView.text)
+        
+        presenter.getNote(textView: textView.text)
         self.dismiss(animated: true, completion: nil)
     }
 }

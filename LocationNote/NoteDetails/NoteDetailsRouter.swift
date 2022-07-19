@@ -10,7 +10,7 @@ import Foundation
 
 protocol NoteDetailsRouterInputProtocol {
     init(viewController: NoteDetailsViewController)
-    func openNotesListVC(text: String)
+    func openNotesListVC(note: Note)
 }
 
 class NoteDetailsRouter: NoteDetailsRouterInputProtocol {
@@ -20,11 +20,11 @@ class NoteDetailsRouter: NoteDetailsRouterInputProtocol {
         self.viewController = viewController
     }
     
-    func openNotesListVC(text: String) {
+    func openNotesListVC(note: Note) {
         let listOfNotesVC = ListOfNotesViewController()
         listOfNotesVC.configurator.configure(with: listOfNotesVC)
         
-        listOfNotesVC.presenter.testData(text: text)
+        listOfNotesVC.presenter.testData(note: note)
     }
 
 }

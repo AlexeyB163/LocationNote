@@ -16,7 +16,7 @@ class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
     var router: ListOfNotesRouterInputProtocol!
     
     var test = "$$$"
-    var test2 = ""
+    var test2:Note?
     
     
     
@@ -27,8 +27,8 @@ class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
     func openDetailsNote() {
         router.openDetailsVC(text: test)
     }
-    func testData(text: String) {
-        test2 = text
+    func testData(note: Note) {
+        test2 = note
         print("test2 \(test2)")
     }
 }

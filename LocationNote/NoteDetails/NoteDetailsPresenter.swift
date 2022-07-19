@@ -27,7 +27,10 @@ class NoteDetailsPresenter: NoteDetailsViewOutputProtocol {
     }
     
     func getDataFromDetails(text: String) {
-        router.openNotesListVC(text: text)
+        //router.openNotesListVC(text: text)
+    }
+    func getNote(textView: String) {
+        interactor.fetchNote(text: textView)
     }
     
     
@@ -36,8 +39,9 @@ class NoteDetailsPresenter: NoteDetailsViewOutputProtocol {
 
 // MARK: - NoteDetailsInteractorOutputProtocol
 extension NoteDetailsPresenter: NoteDetailsInteractorOutputProtocol {
-    func notesDidReceive(text: String) {
-        print("PRES \(text)")
+    func noteDidReceive(note: Note) {
+        print("Note in DetailsPresenter \(note)")
+        router.openNotesListVC(note: note)
     }
     
 
