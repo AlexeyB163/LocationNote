@@ -11,11 +11,12 @@ import Foundation
 
 class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
 
-    var view: ListOfNotesViewInputProtocol!
+   weak var view: ListOfNotesViewInputProtocol!
     var interactor: ListOfNotesInteractorInputProtocol!
     var router: ListOfNotesRouterInputProtocol!
     
-    var test = "@@@"
+    var test = "$$$"
+    var test2 = ""
     
     
     
@@ -26,7 +27,10 @@ class ListOfNotesPresenter: ListOfNotesViewOutputProtocol {
     func openDetailsNote() {
         router.openDetailsVC(text: test)
     }
-    
+    func testData(text: String) {
+        test2 = text
+        print("test2 \(test2)")
+    }
 }
 
 

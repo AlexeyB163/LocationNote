@@ -13,6 +13,7 @@ protocol ListOfNotesViewInputProtocol: AnyObject {
 protocol ListOfNotesViewOutputProtocol: AnyObject {
     init(view: ListOfNotesViewInputProtocol)
     func openDetailsNote()
+    func testData(text: String)
 }
 
 
@@ -35,6 +36,10 @@ class ListOfNotesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+    }
+    
+    deinit {
+        print("ListOfNotesVC - deinint")
     }
 }
 

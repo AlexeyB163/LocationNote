@@ -26,6 +26,10 @@ class NoteDetailsPresenter: NoteDetailsViewOutputProtocol {
         print(a)
     }
     
+    func getDataFromDetails(text: String) {
+        router.openNotesListVC(text: text)
+    }
+    
     
     
 }

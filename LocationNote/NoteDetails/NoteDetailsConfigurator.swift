@@ -14,7 +14,7 @@ class NoteDetailsConfigurator: NoteDetailsConfiguratorInputProtocol {
     func configure(with viewController: NoteDetailsViewController) {
         let presenter = NoteDetailsPresenter(view: viewController)
         let interactor = NoteDetailsInteractor(presenter: presenter)
-        let router = NoteDetailsRouter()
+        let router = NoteDetailsRouter(viewController: viewController)
            
         viewController.presenter = presenter
         presenter.interactor = interactor

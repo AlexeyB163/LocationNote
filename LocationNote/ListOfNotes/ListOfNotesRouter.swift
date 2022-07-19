@@ -32,7 +32,6 @@ class ListOfNotesRouter: ListOfNotesRouterInputProtocol {
             print("B \(self.b)")
         }
         
-        
         let vc = UINavigationController(rootViewController: detailsVC)
         viewController?.present(vc, animated: true, completion: nil)
     }

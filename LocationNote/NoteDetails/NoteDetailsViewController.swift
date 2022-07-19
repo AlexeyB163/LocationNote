@@ -15,8 +15,10 @@ protocol NoteDetailsViewInputProtocol: AnyObject {
 protocol NoteDetailsViewOutputProtocol: AnyObject {
     init(view: NoteDetailsViewInputProtocol)
     func viewDidLoad(text: String)
-   // первый вариант передачи
+   // первый вариант передачи назад
     var completion:((String) -> Void)? { get set }
+    // второе вариант передачи назад
+    func getDataFromDetails(text: String)
 }
 
 class NoteDetailsViewController: UIViewController {
@@ -35,7 +37,7 @@ class NoteDetailsViewController: UIViewController {
         
     }
     deinit {
-        print("deinit")
+        print("DetailsVC - deinint")
     }
 }
 
@@ -66,7 +68,11 @@ extension NoteDetailsViewController {
     }
     
     @objc private func dismissScreen() {
-        presenter.completion?(textView.text)
+        // 1вар
+        //presenter.completion?(textView.text)
+        
+        // 2 вар
+        presenter.getDataFromDetails(text: textView.text)
         self.dismiss(animated: true, completion: nil)
     }
 }

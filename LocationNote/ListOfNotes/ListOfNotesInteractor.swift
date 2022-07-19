@@ -20,7 +20,7 @@ class ListOfNotesInteractor: ListOfNotesInteractorInputProtocol {
     
     
 
-    var presenter: ListOfNotesInteractorOutputProtocol!
+    weak var presenter: ListOfNotesInteractorOutputProtocol!
     
     required init(presenter: ListOfNotesInteractorOutputProtocol) {
         self.presenter = presenter
