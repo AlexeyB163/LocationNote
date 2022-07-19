@@ -24,6 +24,7 @@
 		CEE72B9A2885852A00615F8F /* NoteDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE72B952885852A00615F8F /* NoteDetailsConfigurator.swift */; };
 		CEE72B9E2885854D00615F8F /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE72B9C2885854D00615F8F /* NoteTableViewCell.swift */; };
 		CEE72B9F2885854D00615F8F /* NoteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE72B9D2885854D00615F8F /* NoteCellViewModel.swift */; };
+		CEE72BA22886954800615F8F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE72BA12886954800615F8F /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CEE72B952885852A00615F8F /* NoteDetailsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailsConfigurator.swift; sourceTree = "<group>"; };
 		CEE72B9C2885854D00615F8F /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		CEE72B9D2885854D00615F8F /* NoteCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCellViewModel.swift; sourceTree = "<group>"; };
+		CEE72BA12886954800615F8F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		CEE72B4E2885828200615F8F /* LocationNote */ = {
 			isa = PBXGroup;
 			children = (
+				CEE72BA02886952B00615F8F /* Base */,
 				CEE72B9B2885854D00615F8F /* UIComponents */,
 				CEE72B902885852A00615F8F /* NoteDetails */,
 				CEE72B85288584FF00615F8F /* ListOfNotes */,
@@ -103,9 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				CEE72B86288584FF00615F8F /* ListOfNotesViewController.swift */,
-				CEE72B87288584FF00615F8F /* ListOfNotesConfigurator.swift */,
 				CEE72B88288584FF00615F8F /* ListOfNotesPresenter.swift */,
 				CEE72B89288584FF00615F8F /* ListOfNotesInteractor.swift */,
+				CEE72B87288584FF00615F8F /* ListOfNotesConfigurator.swift */,
 				CEE72B8A288584FF00615F8F /* ListOfNotesRouter.swift */,
 			);
 			path = ListOfNotes;
@@ -114,11 +117,11 @@
 		CEE72B902885852A00615F8F /* NoteDetails */ = {
 			isa = PBXGroup;
 			children = (
-				CEE72B912885852A00615F8F /* NoteDetailsRouter.swift */,
+				CEE72B942885852A00615F8F /* NoteDetailsViewController.swift */,
 				CEE72B922885852A00615F8F /* NoteDetailsPresenter.swift */,
 				CEE72B932885852A00615F8F /* NoteDetailsInteractor.swift */,
-				CEE72B942885852A00615F8F /* NoteDetailsViewController.swift */,
 				CEE72B952885852A00615F8F /* NoteDetailsConfigurator.swift */,
+				CEE72B912885852A00615F8F /* NoteDetailsRouter.swift */,
 			);
 			path = NoteDetails;
 			sourceTree = "<group>";
@@ -130,6 +133,14 @@
 				CEE72B9D2885854D00615F8F /* NoteCellViewModel.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CEE72BA02886952B00615F8F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CEE72BA12886954800615F8F /* TabBarController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE72BA22886954800615F8F /* TabBarController.swift in Sources */,
 				CEE72B992885852A00615F8F /* NoteDetailsViewController.swift in Sources */,
 				CEE72B982885852A00615F8F /* NoteDetailsInteractor.swift in Sources */,
 				CEE72B502885828200615F8F /* AppDelegate.swift in Sources */,
